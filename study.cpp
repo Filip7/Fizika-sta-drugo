@@ -10,7 +10,8 @@ Study::Study(){
 Study::Study(string nameOfStd, string nameOfVal, string nameOfMesUnit, int numOfMes)
 : nameOfStudy(nameOfStd), nameOfValue(nameOfVal), nameOfMeasurementUnit(nameOfMesUnit), numberOfMeasurements(numOfMes)
 {
-  SetMeasuredValues();
+  SetMeasuredValues(); 
+  CalculateDeviationAndMaxDev();
 }
 
 Study::~Study(){
@@ -54,6 +55,7 @@ void Study::SetMeasuredValues(){
         cin >> measuredValues[i];
         sumOfVal += measuredValues[i];
     }
+    midValue = sumOfVal / numberOfMeasurements;
   }
 }
 
@@ -63,6 +65,33 @@ void Study::SetValues(){
   SetNameOfMeasurementUnit();
   SetNumberOfMeasurement();
   SetMeasuredValues();
+
+  CalculateDeviationAndMaxDev();
+}
+
+void Study::CalculateDeviationAndMaxDev(){
+  for(int i = 0; i < numberOfMeasurements; ++i){
+    deviation[i] = midValue - measuredValues[i];  
+  }
+  maxApsoluteDeviation = MaxDeviation(deviation);
+}
+
+double Study::MaxDeviation(double dev[]){
+  int i;
+
+  for(i = 0; i < numberOfMeasurements; ++i){
+    if(dev[i] < 0){
+      dev[i] *= -1;
+    }
+  } 
+  
+  double max = dev[0];
+  for(i = 1; i < numberOfMeasurements; ++i){
+    if(dev[i] > max){
+      max = dev[i];
+    } 
+  }
+  return max;
 }
 
 void Study::PrintValues(){

@@ -39,6 +39,10 @@ protected:
   
   void SetMeasuredValues();
   
+  void CalculateDeviationAndMaxDev();
+
+  double MaxDeviation(double dev[]);
+
   void SetValues();
 };
 

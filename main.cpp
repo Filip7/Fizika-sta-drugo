@@ -5,14 +5,6 @@
 
 using namespace std;
 
-const char fsd_usage_string[]{
-  "\n./fsd  ~ deafult running of program, starts wizard for creating study \n"
-  "./fsd [s] [\"name of study\"] [\"name of value\"] [\"name of unit\"] [number of measured values] \n"
-  "  ^ Use this command to create study quicly \n"
-  "./fsd [h] ~ prints this help \n"
-  "./fsd [o] ~ shows options for Fsd \n"
-  "./fsd [v] ~ shows version information"};
-
 int main(int argc, char* argv[]){
   system(".././testFile.sh");
 
@@ -39,7 +31,7 @@ int main(int argc, char* argv[]){
       }
     }
     else if(*argv[i] == 'h'){
-      cout << fsd_usage_string << endl;
+      PrintUsage();
       break;
     }
     else if(*argv[i] == 'o'){
@@ -48,7 +40,8 @@ int main(int argc, char* argv[]){
     }
     else{
       cout << "Unknown option:  " << argv[i] << endl;
-      cout << "Usage: " << fsd_usage_string << endl;
+      cout << "Usage: ";
+      PrintUsage();
       break;
     }
   }

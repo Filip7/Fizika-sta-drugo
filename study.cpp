@@ -11,7 +11,6 @@ Study::Study(string nameOfStd, string nameOfVal, string nameOfMesUnit, int numOf
 : nameOfStudy(nameOfStd), nameOfValue(nameOfVal), nameOfMeasurementUnit(nameOfMesUnit), numberOfMeasurements(numOfMes)
 {
   SetMeasuredValues(); 
-  CalculateDeviationAndMaxDev();
 }
 
 Study::~Study(){
@@ -56,27 +55,32 @@ void Study::SetMeasuredValues(){
         sumOfVal += measuredValues[i];
     }
     midValue = sumOfVal / numberOfMeasurements;
+    CalculateDeviationAndMaxDev();
   }
 }
 
 void Study::SetValues(){  
+  // This is called when using normal constructor
   SetNameOfStudy();
   SetNameOfValue();
   SetNameOfMeasurementUnit();
   SetNumberOfMeasurement();
   SetMeasuredValues();
-
-  CalculateDeviationAndMaxDev();
 }
 
 void Study::CalculateDeviationAndMaxDev(){
+  // This function calculates Deviations, Maximal apsolute and relative deviation
+  // I wanted to make last two in seperate functions but I am focusing on other stuff in this program cause I have writeen Study creators 1000 times
   for(int i = 0; i < numberOfMeasurements; ++i){
     deviation[i] = midValue - measuredValues[i];  
   }
   maxApsoluteDeviation = MaxDeviation(deviation);
+  maxRelativeDeviation = (maxApsoluteDeviation / midValue) * 100;
 }
 
 double Study::MaxDeviation(double dev[]){
+  // This function calculates Maximal Deviation from values inserted. It needs to be rewriten because it could be more efficant
+  // TODO: Write algorithm so that the first for is implmented in second (than I wouldnt have to send hole array to the function)
   int i;
 
   for(i = 0; i < numberOfMeasurements; ++i){

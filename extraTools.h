@@ -9,4 +9,6 @@ void PrintVersion();
 
 void MainMenu();
 
+void PrintUsage();
+
 #endif // EXTRATOOLS_H

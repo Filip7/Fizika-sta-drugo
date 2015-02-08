@@ -5,6 +5,8 @@ using namespace std;
 
 /*
  * Colection of data to create a Study
+ * Study takes care of calculating its values based on values inserted by user
+ * Study should not do enything else like printing and exporting in seperate file
  */
 
 class Study

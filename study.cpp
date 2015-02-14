@@ -10,7 +10,7 @@ Study::Study(){
 Study::Study(string nameOfStd, string nameOfVal, string nameOfMesUnit, int numOfMes)
 : nameOfStudy(nameOfStd), nameOfValue(nameOfVal), nameOfMeasurementUnit(nameOfMesUnit), numberOfMeasurements(numOfMes)
 {
-  SetMeasuredValues(); 
+  CalculateMeasuredValues(); 
 }
 
 Study::~Study(){
@@ -25,12 +25,12 @@ void Study::SetNameOfStudy(){
 
 void Study::SetNameOfValue(){
   cout << "Insert name of value: ";
-  cin >> nameOfValue;
+  getline(cin, nameOfValue);
 }
 
 void Study::SetNameOfMeasurementUnit(){
   cout << "Insert measuring unit: ";
-  cin >> nameOfMeasurementUnit;
+  getline(cin, nameOfMeasurementUnit);
 }
 
 void Study::SetNumberOfMeasurement(){
@@ -38,7 +38,7 @@ void Study::SetNumberOfMeasurement(){
   cin >> numberOfMeasurements;
 }
 
-void Study::SetMeasuredValues(){
+void Study::CalculateMeasuredValues(){
   // Cheaking if numberOfMeasurment is 0 here because program can be started from command line and
   // program goes throught this part every time so it is logical
   if(numberOfMeasurements == 0){
@@ -65,7 +65,7 @@ void Study::SetValues(){
   SetNameOfValue();
   SetNameOfMeasurementUnit();
   SetNumberOfMeasurement();
-  SetMeasuredValues();
+  CalculateMeasuredValues();
 }
 
 void Study::CalculateDeviationAndMaxDev(){
@@ -96,13 +96,5 @@ double Study::MaxDeviation(double dev[]){
     } 
   }
   return max;
-}
-
-void Study::PrintValues(){
-  cout << "Name of study: " << nameOfStudy << endl;
-  
-  for(int i = 0; i < numberOfMeasurements; ++i){
-    cout << nameOfValue << i+1 << ": " << measuredValues[i] << " " << nameOfMeasurementUnit << endl;
-  }
 }
 

@@ -30,7 +30,18 @@ public:
   Study(string nameOfStd, string nameOfVal, string nameOfMesUnit, int numOfMes);
   ~Study();
   
-  void PrintValues();
+  string getNameOfStudy(){return nameOfStudy;}
+  string getNameOfValue(){return nameOfValue;}
+  string getNameOfMeasurementUnit(){return nameOfMeasurementUnit;}
+  
+  int getNumberOfMeasurements(){return numberOfMeasurements;}
+                                                 // TODO:
+  double getMeasuredValues(){return NULL;}       // fix this
+  double getDeviation(){return NULL;}            // and this
+  double getMidValue(){return midValue;}
+  double getMaxApsDev(){return maxApsoluteDeviation;}
+  double getMaxRelDev(){return maxRelativeDeviation;}
+  double getSumOfVal(){return sumOfVal;}
   
 protected:
   void SetNameOfStudy();
@@ -39,7 +50,7 @@ protected:
   
   void SetNumberOfMeasurement();
   
-  void SetMeasuredValues();
+  void CalculateMeasuredValues();
   
   void CalculateDeviationAndMaxDev();
 

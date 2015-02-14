@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "study.h"
+#include "printStudy.h"
 #include "extraTools.h"
 
 using namespace std;
@@ -21,7 +22,7 @@ int main(int argc, char* argv[]){
         int valueNumber = atoi(argv[5]);
 
 	      Study elaborat{ studyName, valueName, mesUnitName, valueNumber};
-	      elaborat.PrintValues();
+	      printStudy(elaborat);
         break;
       }
       else{

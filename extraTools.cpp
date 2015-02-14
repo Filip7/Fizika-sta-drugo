@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include "extraTools.h"
+#include "printStudy.h"
 #include "study.h"
 
 using namespace std;
@@ -31,7 +32,7 @@ void MainMenu(){
     case 1:
     {
       Study elaborat; 
-      elaborat.PrintValues();
+      printStudy(elaborat);
       goto start;
     }
     case 2:

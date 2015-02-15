@@ -8,24 +8,24 @@
 using namespace std;
 
 const char fsd_usage_string[]{
-  "\n./fsd  ~ deafult running of program, starts wizard for creating study \n"
-  "./fsd [s] [\"name of study\"] [\"name of value\"] [\"name of unit\"] [number of measured values] \n"
-  "  ^ Use this command to create study quicly \n"
-  "./fsd [h] ~ prints this help \n"
-  "./fsd [o] ~ shows options for Fsd \n"
-  "./fsd [v] ~ shows version information"};
+  "\n./fsd  ~ normalno pokretanje programa, pokreće wizard za izradu elaborata \n"
+  "./fsd [s] [\"ime elaborata\"] [\"ime vrijednosti\"] [\"ime mjerne jedinice\"] [broj mjerenja] \n"
+  "  ^ Koristi ovu naredbu za brzu izradu elaborata \n"
+  "./fsd [h] ~ ispisuje ovu pomoć \n"
+  "./fsd [o] ~ prikazuje opcije za program \n"
+  "./fsd [v] ~ prikazuje informacije o verziji programa"};
 
 void MainMenu(){
   // Default program goes here
   int choice;
   
   cout << "\t***Fizika sta drugo***" << endl;
-  cout << "Version 2.0" << endl;
+  cout << "Verzija 3.0" << endl;
   
   start:
-  cout << endl << "Chose option by typing number of the option" << endl;
-  cout << "(1) Create study, (2) Options, (3) Help, (4) Version, (5) Exit" << endl;
-  cout << "Insert option: ";
+  cout << endl << "Odaberi jednu od opcija upisujuči broj" << endl;
+  cout << "(1) Izradi elaborat, (2) Opcije, (3) Pomoć, (4) Verzija, (5) Izlaz" << endl;
+  cout << "Upisi odabir:  ";
   
   cin >> choice;
   switch(choice){
@@ -52,7 +52,7 @@ void MainMenu(){
     }
     case 5:
     {
-     cout << "Thank you for using Fizika sta drugo program" << endl;
+     cout << "Hvala na korištenju programa Fsd!" << endl;
      exit(0); 
     }
   }
@@ -63,15 +63,14 @@ void Options(){
 }
 
 void PrintHelp(){
-  cout << endl << "You can start program normaly and use wizard to create an study" << endl;
-  cout << endl << "Here would go some help" << endl;
+  cout << endl << fsd_usage_string << endl;
 }
 
 void PrintVersion(){
   cout << endl << "\t***Fizika sta drugo***" << endl;
-  cout << "Version 2.0" << endl << endl;
-  cout << "In memory of Nikola M." << endl << endl;;
-  cout << "Made by: Filip Milković" << endl;
+  cout << "Verzija 3.0" << endl << endl;
+  cout << "U sjećanje na Nikolu M." << endl << endl;;
+  cout << "Napravio: Filip Milković" << endl;
 }
 
 void PrintUsage(){

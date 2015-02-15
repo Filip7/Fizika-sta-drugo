@@ -35,9 +35,19 @@ public:
   string getNameOfMeasurementUnit(){return nameOfMeasurementUnit;}
   
   int getNumberOfMeasurements(){return numberOfMeasurements;}
-                                                 // TODO:
-  double getMeasuredValues(){return NULL;}       // fix this
-  double getDeviation(){return NULL;}            // and this
+                                                
+  const double* getMeasuredValues(){
+    const  double* mesVal = &measuredValues[0];
+
+    return mesVal;
+  }
+
+  const double* getDeviation(){
+    const double* dev = &deviation[0];
+
+    return dev;
+  }
+
   double getMidValue(){return midValue;}
   double getMaxApsDev(){return maxApsoluteDeviation;}
   double getMaxRelDev(){return maxRelativeDeviation;}

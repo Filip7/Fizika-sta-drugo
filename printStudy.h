@@ -4,6 +4,6 @@
 
 void printStudy(Study& elaborat);
 
-void exportStudyInFile(Study &elaborat);
+void exportStudyInFile(Study& elaborat);
 
 #endif // PRINTSTUDY_H

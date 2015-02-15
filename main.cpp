@@ -26,8 +26,8 @@ int main(int argc, char* argv[]){
         break;
       }
       else{
-        cout << "Not enough options to start the program!" << endl;
-        cout << "Use h to see help" << endl;
+        cout << "Nedovoljno opcija za pokretanje programa!" << endl;
+        cout << "Pokreni sa h za pomoć" << endl;
         break;
       }
     }
@@ -40,8 +40,8 @@ int main(int argc, char* argv[]){
       break;
     }
     else{
-      cout << "Unknown option:  " << argv[i] << endl;
-      cout << "Usage: ";
+      cout << "Nepoznata opcija:  " << argv[i] << endl;
+      cout << "Koristi: ";
       PrintUsage();
       break;
     }

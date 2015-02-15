@@ -19,22 +19,22 @@ Study::~Study(){
 void Study::SetNameOfStudy(){
   cin.ignore(); 
   
-  cout << endl << "Insert name of study: ";
+  cout << endl << "Upiši ime elaborata: ";
   getline(cin, nameOfStudy);
 }
 
 void Study::SetNameOfValue(){
-  cout << "Insert name of value: ";
+  cout << "Upiši ime vrijednosti: ";
   getline(cin, nameOfValue);
 }
 
 void Study::SetNameOfMeasurementUnit(){
-  cout << "Insert measuring unit: ";
+  cout << "Upiši ime mjerne jedinice: ";
   getline(cin, nameOfMeasurementUnit);
 }
 
 void Study::SetNumberOfMeasurement(){
-  cout << "Insert how many values you measured: ";
+  cout << "Upiši broj mjerenja: ";
   cin >> numberOfMeasurements;
 }
 
@@ -42,12 +42,12 @@ void Study::CalculateMeasuredValues(){
   // Cheaking if numberOfMeasurment is 0 here because program can be started from command line and
   // program goes throught this part every time so it is logical
   if(numberOfMeasurements == 0){
-    cout << "\tWell done mate!" << endl;
-    cout << "You measured nothing!" << endl;
-    cout << "End resault: F" << endl;
+    cout << "\tBravo!" << endl;
+    cout << "Nisi ništa izmjerio!" << endl;
+    cout << "Ocjena: 1" << endl;
   }
   else{
-    cout << endl << "Insert values:" << endl; 
+    cout << endl << "Unesi vrijednosti:" << endl; 
   
     for(int i = 0; i < numberOfMeasurements; ++i){
         cout << nameOfValue << i+1 << ": ";

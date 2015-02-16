@@ -3,14 +3,18 @@
 #include "study.h"
 using namespace std;
 
-#define Triangle "\u25B2"
+#ifdef _WIN32
+  #define Triangle ""
+#else
+  #define Triangle "\u25B2"
+#endif
 
 void printStudy(Study& elaborat){
   int i;
   const double* dev = elaborat.getDeviation();
   
   cout << endl;
-  cout << "\tIzračunate vrijednosti: " << endl << endl;
+  cout << "\tIzracunate vrijednosti: " << endl << endl;
 
   cout << endl << "Broj mjerenja: " << elaborat.getNumberOfMeasurements() << endl;
 
@@ -25,7 +29,7 @@ void printStudy(Study& elaborat){
   cout << endl << "Maksimalno apsolutno odstupanje: " << endl;
   cout << "\t" << "|" << elaborat.getNameOfValue() << "|max = " << elaborat.getMaxApsDev() << elaborat.getNameOfMeasurementUnit() << endl; 
 
-  cout << endl << "Maksimalna relativna pogreška: " << endl;
+  cout << endl << "Maksimalna relativna pogreska: " << endl;
   cout << "\t" << "rmax = " << elaborat.getMaxRelDev() << "%" << endl;
   
   cout << endl << "Rezultat s maksimalnim relativnim odstupanjem: " << endl;
@@ -38,7 +42,7 @@ void printStudy(Study& elaborat){
 
   char odabir;
 
-  cout << endl << endl << "Želite li spremiti elaborat u posebnu datoteku? (Da/Ne) :";
+  cout << endl << endl << "Zelite li spremiti elaborat u posebnu datoteku? (Da/Ne) :";
   cin >> odabir;
   if(odabir == 'd' || odabir == 'D'){
     exportStudyInFile(elaborat);
@@ -48,4 +52,5 @@ void printStudy(Study& elaborat){
 
 void exportStudyInFile(Study& elaborat){
   cout << "In making" << endl;
+
 }

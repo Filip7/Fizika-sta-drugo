@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "study.h"
 using namespace std;
 
 Study::Study(){
+  cout << endl << "\t***Izrada elaborata***" << endl;
   SetValues();
 }
 
@@ -17,24 +19,24 @@ Study::~Study(){
 }
 
 void Study::SetNameOfStudy(){
-  cin.ignore(); 
+  cin.ignore(); // Remove this if creating study without menu 
   
-  cout << endl << "Upiši ime elaborata: ";
+  cout << endl << "Upisi ime elaborata: ";
   getline(cin, nameOfStudy);
 }
 
 void Study::SetNameOfValue(){
-  cout << "Upiši ime vrijednosti: ";
+  cout << "Upisi ime vrijednosti: ";
   getline(cin, nameOfValue);
 }
 
 void Study::SetNameOfMeasurementUnit(){
-  cout << "Upiši ime mjerne jedinice: ";
+  cout << "Upisi ime mjerne jedinice: ";
   getline(cin, nameOfMeasurementUnit);
 }
 
 void Study::SetNumberOfMeasurement(){
-  cout << "Upiši broj mjerenja: ";
+  cout << "Upisi broj mjerenja: ";
   cin >> numberOfMeasurements;
 }
 
@@ -43,8 +45,9 @@ void Study::CalculateMeasuredValues(){
   // program goes throught this part every time so it is logical
   if(numberOfMeasurements == 0){
     cout << "\tBravo!" << endl;
-    cout << "Nisi ništa izmjerio!" << endl;
+    cout << "Nisi nista izmjerio!" << endl;
     cout << "Ocjena: 1" << endl;
+    exit(0);
   }
   else{
     cout << endl << "Unesi vrijednosti:" << endl; 

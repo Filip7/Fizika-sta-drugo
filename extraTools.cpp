@@ -8,12 +8,12 @@
 using namespace std;
 
 const char fsd_usage_string[]{
-  "\n./fsd  ~ normalno pokretanje programa, pokreće wizard za izradu elaborata \n"
-  "./fsd [s] [\"ime elaborata\"] [\"ime vrijednosti\"] [\"ime mjerne jedinice\"] [broj mjerenja] \n"
+  "\n./fsd  ~ normalno pokretanje programa, pokrece wizard za izradu elaborata \n"
+  "./fsd [-s] [\"ime elaborata\"] [\"ime vrijednosti\"] [\"ime mjerne jedinice\"] [broj mjerenja] \n"
   "  ^ Koristi ovu naredbu za brzu izradu elaborata \n"
-  "./fsd [h] ~ ispisuje ovu pomoć \n"
-  "./fsd [o] ~ prikazuje opcije za program \n"
-  "./fsd [v] ~ prikazuje informacije o verziji programa"};
+  "./fsd [-h] ~ ispisuje ovu pomoc \n"
+  "./fsd [-o] ~ prikazuje opcije za program \n"
+  "./fsd [-v] ~ prikazuje informacije o verziji programa"};
 
 void MainMenu(){
   // Default program goes here
@@ -23,8 +23,8 @@ void MainMenu(){
   cout << "Verzija 3.0" << endl;
   
   start:
-  cout << endl << "Odaberi jednu od opcija upisujuči broj" << endl;
-  cout << "(1) Izradi elaborat, (2) Opcije, (3) Pomoć, (4) Verzija, (5) Izlaz" << endl;
+  cout << endl << "Odaberi jednu od opcija upisujuci broj" << endl;
+  cout << "(1) Izradi elaborat, (2) Opcije, (3) Pomoc, (4) Verzija, (5) Izlaz" << endl;
   cout << "Upisi odabir:  ";
   
   cin >> choice;
@@ -52,7 +52,7 @@ void MainMenu(){
     }
     case 5:
     {
-     cout << "Hvala na korištenju programa Fsd!" << endl;
+     cout << "Hvala na koristenju programa Fsd!" << endl;
      exit(0); 
     }
   }
@@ -67,10 +67,37 @@ void PrintHelp(){
 }
 
 void PrintVersion(){
+  cout << R"(
+              _____                    _____                    _____          
+             /\    \                  /\    \                  /\    \         
+            /::\    \                /::\    \                /::\    \        
+           /::::\    \              /::::\    \              /::::\    \       
+          /::::::\    \            /::::::\    \            /::::::\    \      
+         /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \     
+        /:::/__\:::\    \        /:::/__\:::\    \        /:::/  \:::\    \    
+       /::::\   \:::\    \       \:::\   \:::\    \      /:::/    \:::\    \   
+      /::::::\   \:::\    \    ___\:::\   \:::\    \    /:::/    / \:::\    \  
+     /:::/\:::\   \:::\    \  /\   \:::\   \:::\    \  /:::/    /   \:::\ ___\ 
+    /:::/  \:::\   \:::\____\/::\   \:::\   \:::\____\/:::/____/     \:::|    |
+    \::/    \:::\   \::/    /\:::\   \:::\   \::/    /\:::\    \     /:::|____|
+     \/____/ \:::\   \/____/  \:::\   \:::\   \/____/  \:::\    \   /:::/    / 
+              \:::\    \       \:::\   \:::\    \       \:::\    \ /:::/    /  
+               \:::\____\       \:::\   \:::\____\       \:::\    /:::/    /   
+                \::/    /        \:::\  /:::/    /        \:::\  /:::/    /    
+                 \/____/          \:::\/:::/    /          \:::\/:::/    /     
+                                   \::::::/    /            \::::::/    /      
+                                    \::::/    /              \::::/    /       
+                                     \::/    /                \::/____/        
+                                      \/____/                  ~~                                                                                           
+
+             )" ;
+
+
+
   cout << endl << "\t***Fizika sta drugo***" << endl;
-  cout << "Verzija 3.0" << endl << endl;
-  cout << "U sjećanje na Nikolu M." << endl << endl;;
-  cout << "Napravio: Filip Milković" << endl;
+  cout << "Verzija 3.1" << endl << endl;
+  cout << "U sjecanje na Nikolu M." << endl << endl;;
+  cout << "Napravio: Filip Milkovic" << endl;
 }
 
 void PrintUsage(){

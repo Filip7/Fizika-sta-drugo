@@ -14,7 +14,7 @@ int main(int argc, char* argv[]){
   }
   
   for(int i = 1; i < argc; ++i){
-    if(*argv[i] == 's'){
+    if(string(argv[i]) == "-s"){
       if(argc == 6){
         string studyName = argv[2];
         string valueName = argv[3];
@@ -27,16 +27,20 @@ int main(int argc, char* argv[]){
       }
       else{
         cout << "Nedovoljno opcija za pokretanje programa!" << endl;
-        cout << "Pokreni sa h za pomoć" << endl;
+        cout << "Pokreni sa -h za pomoc" << endl;
         break;
       }
     }
-    else if(*argv[i] == 'h'){
+    else if(string(argv[i]) == "-h"){
       PrintUsage();
       break;
     }
-    else if(*argv[i] == 'o'){
+    else if(string(argv[i]) == "-o"){
       Options();
+      break;
+    }
+    else if(string(argv[i]) == "-v"){
+      PrintVersion();
       break;
     }
     else{

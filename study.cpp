@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <cstdlib>
 #include "study.h"
 using namespace std;
@@ -18,9 +19,7 @@ Study::Study(string nameOfStd, string nameOfVal, string nameOfMesUnit, int numOf
 Study::~Study(){
 }
 
-void Study::SetNameOfStudy(){
-  cin.ignore(); // Remove this if creating study without menu 
-  
+void Study::SetNameOfStudy(){ 
   cout << endl << "Upisi ime elaborata: ";
   getline(cin, nameOfStudy);
 }
@@ -36,11 +35,22 @@ void Study::SetNameOfMeasurementUnit(){
 }
 
 void Study::SetNumberOfMeasurement(){
-  cout << "Upisi broj mjerenja: ";
-  cin >> numberOfMeasurements;
+  string input{""};
+  numberOfMeasurements = 0;
+  while(true){
+    cout << "Upisi broj mjerenja: ";
+    getline(cin, input);
+    stringstream thisStream(input);
+    if(thisStream >> numberOfMeasurements){
+      break;
+    }
+    cout << "Nije upisan broj!" << endl;
+  }
 }
 
 void Study::CalculateMeasuredValues(){
+  string input{""};
+    
   // Cheaking if numberOfMeasurment is 0 here because program can be started from command line and
   // program goes throught this part every time so it is logical
   if(numberOfMeasurements == 0){
@@ -53,9 +63,17 @@ void Study::CalculateMeasuredValues(){
     cout << endl << "Unesi vrijednosti:" << endl; 
   
     for(int i = 0; i < numberOfMeasurements; ++i){
+      measuredValues[i] = 0;
+      while(true){
         cout << nameOfValue << i+1 << ": ";
-        cin >> measuredValues[i];
-        sumOfVal += measuredValues[i];
+        getline(cin, input);
+        stringstream thisStream(input);
+        if(thisStream >> measuredValues[i]){
+          break;
+        }
+        cout << "Nije upisan broj!" << endl;
+      }
+      sumOfVal += measuredValues[i];
     }
     midValue = sumOfVal / numberOfMeasurements;
     CalculateDeviationAndMaxDev();

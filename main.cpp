@@ -7,8 +7,6 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-  system(".././testFile.sh");
-
   if(argc < 2){
     MainMenu();
   }
@@ -44,7 +42,7 @@ int main(int argc, char* argv[]){
       break;
     }
     else{
-      cout << "Nepoznata opcija:  " << argv[i] << endl;
+      cout << "Nepoznata opcija:  '" << argv[i] << "'" << endl;
       cout << "Koristi: ";
       PrintUsage();
       break;

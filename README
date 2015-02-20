@@ -1,7 +1,10 @@
                   ***Fizika sta drugo***
 
-This is program that creates studys(elaborat) from inserted values.
-For usage go to the wiki.
+Program izraduje elaborat iz fizike.
+Omogucava spremanje elaborata u posebnu datoteku.
 
-Previously I've writen this program in C but now I have rewriten it in C++
+Za upute o koristenju pogledaj wiki
+
+Program je napisan u C++
+
 

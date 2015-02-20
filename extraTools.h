@@ -11,4 +11,6 @@ void MainMenu();
 
 void PrintUsage();
 
+void ClearScreen();
+
 #endif // EXTRATOOLS_H

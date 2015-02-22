@@ -57,6 +57,7 @@ void printStudy(Study& elaborat){
 
 void exportStudyInFile(Study& elaborat){
   int i;
+  const double* mesVal = elaborat.getMeasuredValues();
   const double* dev = elaborat.getDeviation();
   string save_location = GetFileNameAndLocation(); 
   
@@ -67,9 +68,14 @@ void exportStudyInFile(Study& elaborat){
   saveFile << "__________________________________________________________________________________" << endl << endl;
   saveFile << elaborat.getNameOfStudy() << endl << endl;
   
-  saveFile << "Izracunate vrijednosti: " << endl;
-
   saveFile << endl << "Broj mjerenja: " << elaborat.getNumberOfMeasurements() << endl;
+  
+  saveFile << endl << "Izmjerene vrijednosti: " << endl;
+  for(i = 0; i < elaborat.getNumberOfMeasurements(); ++i){
+    saveFile << elaborat.getNameOfValue() << i+1 << " = " << *(mesVal+i) << " " << elaborat.getNameOfMeasurementUnit() << endl;
+  }
+
+  saveFile << endl << "Izracunate vrijednosti: " << endl;
 
   saveFile << endl << "Srednja vrijednost: " << endl;
   saveFile << elaborat.getNameOfValue() << "' = " << elaborat.getMidValue()  << " " << elaborat.getNameOfMeasurementUnit() << endl;
@@ -95,5 +101,5 @@ void exportStudyInFile(Study& elaborat){
   
   saveFile.close();
   
-  cout << endl << "***Elaborat spremljen na lokaciji: " << save_location << " ***" << endl << endl;
+  cout << endl << "*** Elaborat spremljen na lokaciji: " << save_location << " ***" << endl << endl;
 }

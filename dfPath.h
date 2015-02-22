@@ -13,7 +13,7 @@ using namespace std;
 
 string GetFileNameAndLocation();
 
-string DefaultDirectory();
+string DefaultDirectory(string dir);
 
 // Function: fileExists
 /**

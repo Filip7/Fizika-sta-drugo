@@ -8,7 +8,7 @@
 
 using namespace std;
 
-const char fsd_usage_string[]{
+const string fsd_usage_string{
   "\n./fsd  ~ normalno pokretanje programa, pokrece wizard za izradu elaborata \n"
   "./fsd [-s] [\"ime elaborata\"] [\"ime vrijednosti\"] [\"ime mjerne jedinice\"] [broj mjerenja] \n"
   "        ^ Koristi ovu naredbu za brzu izradu elaborata \n"
@@ -111,7 +111,7 @@ void PrintVersion(){
              )" ;
 
   cout << endl << "\t***Fizika sta drugo***" << endl;
-  cout << "Verzija 3.1" << endl << endl;
+  cout << "Verzija 3.1415" << endl << endl;
   cout << "U sjecanje na Nikolu M." << endl << endl;;
   cout << "Napravio: Filip Milkovic" << endl;
 }

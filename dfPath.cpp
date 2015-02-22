@@ -57,7 +57,7 @@ string GetFileNameAndLocation(){
  
   if(fileExists(file_location)){
     cout << "Datoteka: \"" << nameOfFile << ".txt" << " \"vec postoji" << endl;
-    cout << "Zelite li spremiti elaborat pod drugim imenom? (Da/Ne) : ";
+    cout << "Zelite li spremiti datoteku pod drugim imenom? (Da/Ne) : ";
     getline(cin, choice);
     choiceChar = choice[0];
     if(choiceChar == 'D' || choiceChar == 'd'){

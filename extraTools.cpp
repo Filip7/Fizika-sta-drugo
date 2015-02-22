@@ -26,7 +26,7 @@ void MainMenu(){
   
   start:
   cout << endl << "Odaberi jednu od opcija upisujuci broj" << endl;
-  cout << "(1) Izradi elaborat, (2) Opcije, (3) Pomoc, (4) Verzija, (5) Ocisti ekran, (6) Izlaz" << endl;
+  cout << "(1) Izradi elaborat, (2) Opcije, (3) Pomoc, (4) Verzija, (5) Ocisti ekran,\n(6) Izlaz" << endl;
   while(true){
     cout << "Upisi odabir:  ";
       getline(cin,input);

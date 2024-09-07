@@ -2,12 +2,11 @@
 #include <string>
 #include <sys/stat.h>
 #include <cstdlib>
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/fstream.hpp>
+#include <filesystem>
 #include "dfPath.h"
 
 using namespace std;
-using namespace boost::filesystem;
+using namespace std::filesystem;
 
 string DefaultDirectory(string dir){
   #ifdef _WIN32
@@ -27,7 +26,7 @@ string DefaultDirectory(string dir){
   #endif
   
   try {
-    path p = complete(default_save_location);
+    path p = absolute(default_save_location);
     create_directory(p);
   }
   catch (exception& e) {
